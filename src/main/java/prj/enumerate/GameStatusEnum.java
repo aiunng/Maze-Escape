@@ -15,7 +15,7 @@ public enum GameStatusEnum {
   RUN(2, "运行","RUN"),
   PAUSE(3, "PAUSE","PAUSE"),
   OVER(4, "GAME OVER","OVER"),
-  SUCCESS(5, "ESCAPE THE MAZE!","SUCCESS"),
+  SUCCESS(5, "FINISH TIME:","SUCCESS"),
   ;
   private int code;
   private String desc;

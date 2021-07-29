@@ -92,6 +92,8 @@ public class MoveCtrlManager {
           // 通关检测
           if (checkCollision4Lines(Collections.singletonList(MAZE1_SUCCESS_LINE), pointMode)) {
             SysOptions.setStatus(GameStatusEnum.SUCCESS.getCode());
+            // 设置通关时间
+            SysOptions.setFinishTime(System.currentTimeMillis() - SysOptions.getStartTime());
           }
         }
       }

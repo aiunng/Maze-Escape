@@ -57,7 +57,7 @@ public class SwingManager {
     frame.setBounds(500, 220, 430, 530);
     Container contentPane = frame.getContentPane();
     contentPane.setLayout(new BorderLayout());
-    frame.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
+    frame.setDefaultCloseOperation(JDialog.EXIT_ON_CLOSE);
     frame.setVisible(true);
     // 获取屏幕焦点 ，键盘监听使用
     frame.setFocusable(true);
@@ -112,6 +112,8 @@ public class SwingManager {
         moveing();
       }
       SysOptions.setStatus(START.getCode());
+      // 初始化游戏开始时间
+      SysOptions.setStartTime(System.currentTimeMillis());
       // 重新获取焦点 ，键盘监听使用
       frame.requestFocus();
     });
@@ -148,7 +150,7 @@ public class SwingManager {
 
   private static void buildHelpRegion(JPanel contentPanel) {
 
-    JButton cfgButton = addJButton("about", TEXT_NORMAL, 270, 15, 60, 40, contentPanel);
+    JButton cfgButton = addJButton("ABOUT", TEXT_NORMAL, 270, 15, 60, 40, contentPanel);
 
     cfgButton.addActionListener(e -> {
       JDialog jDialog = new JDialog();

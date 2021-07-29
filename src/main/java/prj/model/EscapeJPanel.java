@@ -8,6 +8,7 @@ import static prj.util.Constant.DEFAULT_YPOINT;
 import static prj.util.Constant.LEVE_1;
 import static prj.util.Constant.PLAYER_ICON;
 import static prj.util.Constant.TEXT_SMALL;
+import static prj.util.TimeUtil.toStringTime;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -106,7 +107,7 @@ public class EscapeJPanel extends JPanel {
       g.drawString(CROWN_ICON, 180, 250);
       g.setFont(LEVE_1);
       g.drawString(GameStatusEnum.SUCCESS.getEn(), 140, 280);
-      g.drawString(GameStatusEnum.SUCCESS.getDesc(), 80, 310);
+      g.drawString(GameStatusEnum.SUCCESS.getDesc() + toStringTime(SysOptions.getFinishTime()), 80, 310);
     }
 
     this.updateUI();

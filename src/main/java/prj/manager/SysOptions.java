@@ -19,6 +19,10 @@ public class SysOptions {
   public static volatile MoveLevelEnum level = MoveLevelEnum.L1;
   // 生命
   public static volatile AtomicInteger life = new AtomicInteger(3);
+  // 开始时间
+  public static volatile long startTime;
+  // 完成时间
+  public static volatile long finishTime;
 
   public static int getStatus() {
     return status;
@@ -46,5 +50,29 @@ public class SysOptions {
 
   public static void setLevel(MoveLevelEnum level) {
     SysOptions.level = level;
+  }
+
+  public static AtomicInteger getLife() {
+    return life;
+  }
+
+  public static void setLife(AtomicInteger life) {
+    SysOptions.life = life;
+  }
+
+  public static long getFinishTime() {
+    return finishTime;
+  }
+
+  public static void setFinishTime(long finishTime) {
+    SysOptions.finishTime = finishTime;
+  }
+
+  public static long getStartTime() {
+    return startTime;
+  }
+
+  public static void setStartTime(long startTime) {
+    SysOptions.startTime = startTime;
   }
 }
