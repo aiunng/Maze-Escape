@@ -6,6 +6,7 @@ import static prj.enumerate.DirectionEnum.RIGHT;
 import static prj.enumerate.DirectionEnum.UP;
 import static prj.manager.KeyboardManager.getDirection;
 import static prj.manager.MazeManager.getMazePoints;
+import static prj.manager.PlaySoundManager.playClip;
 import static prj.model.EscapeJPanel.getxPoint;
 import static prj.model.EscapeJPanel.getyPoint;
 import static prj.model.EscapeJPanel.setxPoint;
@@ -18,6 +19,7 @@ import java.util.Collections;
 import java.util.concurrent.TimeUnit;
 import prj.enumerate.DirectionEnum;
 import prj.enumerate.GameStatusEnum;
+import prj.enumerate.SoundTypeEnum;
 import prj.model.PointMode;
 
 /**
@@ -81,16 +83,19 @@ public class MoveCtrlManager {
           pointMode.setxPoint(getxPoint());
           pointMode.setyPoint(getyPoint());
           if (checkCollision4Lines(getMazePoints(), pointMode)) {
+            playClip(SoundTypeEnum.FAIL);
             SysOptions.setStatus(GameStatusEnum.OVER.getCode());
           }
 
           // 边界检测
           if (!getStop(old[0])) {
+            playClip(SoundTypeEnum.FAIL);
             SysOptions.setStatus(GameStatusEnum.OVER.getCode());
           }
 
           // 通关检测
           if (checkCollision4Lines(Collections.singletonList(MAZE1_SUCCESS_LINE), pointMode)) {
+            playClip(SoundTypeEnum.SUCCESS);
             SysOptions.setStatus(GameStatusEnum.SUCCESS.getCode());
             // 设置通关时间
             SysOptions.setFinishTime(System.currentTimeMillis() - SysOptions.getStartTime());

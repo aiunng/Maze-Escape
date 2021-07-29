@@ -5,6 +5,7 @@ import static prj.enumerate.GameStatusEnum.START;
 import static prj.enumerate.MoveLevelEnum.getMoveLevelEnumByDesc;
 import static prj.manager.KeyboardManager.setDirection;
 import static prj.manager.MoveCtrlManager.moveing;
+import static prj.manager.PlaySoundManager.playClip;
 import static prj.model.EscapeJPanel.setxPoint;
 import static prj.model.EscapeJPanel.setyPoint;
 import static prj.util.Constant.ADVER;
@@ -44,6 +45,7 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import prj.enumerate.GameStatusEnum;
 import prj.enumerate.MoveLevelEnum;
+import prj.enumerate.SoundTypeEnum;
 import prj.model.EscapeJPanel;
 
 /**
@@ -85,6 +87,7 @@ public class SwingManager {
 
     contentPane.add(container);
 
+    playClip(SoundTypeEnum.BGM);
     // 移动
     moveing();
     // 更新窗口
@@ -101,6 +104,7 @@ public class SwingManager {
 
     JButton startButton = addJButton(START.getEn(), TEXT_NORMAL, 30, 15, 60, 40, buttonJPanel);
     startButton.addActionListener((o) -> {
+      playClip(SoundTypeEnum.BUTTON);
       // 如果状态是结束或者通关 则重新开始
       if (GameStatusEnum.OVER.getCode() == SysOptions.getStatus() ||
           GameStatusEnum.SUCCESS.getCode() == SysOptions.getStatus()) {
@@ -120,6 +124,7 @@ public class SwingManager {
 
     JButton pauseButton = addJButton(PAUSE.getEn(), TEXT_NORMAL, 100, 15, 60, 40, buttonJPanel);
     pauseButton.addActionListener((o) -> {
+      playClip(SoundTypeEnum.BUTTON);
       // 结束状态、未开始游戏状态、通关状态不能暂停
       if (GameStatusEnum.OVER.getCode() != SysOptions.getStatus() &&
           GameStatusEnum.STOP.getCode() != SysOptions.getStatus() &&
@@ -134,6 +139,8 @@ public class SwingManager {
     JComboBox levelComboBox = addLevelComboBox(TEXT_NORMAL, 170, 15, 90, 40, buttonJPanel);
 
     levelComboBox.addActionListener((o) -> {
+
+      playClip(SoundTypeEnum.BUTTON);
 
       String levelDesc = levelComboBox.getSelectedItem().toString();
       MoveLevelEnum levelEnum = getMoveLevelEnumByDesc(levelDesc);
@@ -153,6 +160,7 @@ public class SwingManager {
     JButton cfgButton = addJButton("ABOUT", TEXT_NORMAL, 270, 15, 60, 40, contentPanel);
 
     cfgButton.addActionListener(e -> {
+      playClip(SoundTypeEnum.BUTTON);
       JDialog jDialog = new JDialog();
       jDialog.setTitle("about");
       jDialog.setBounds(580, 360, 220, 180);
@@ -219,6 +227,6 @@ public class SwingManager {
   }
 
   public static void main(String[] args) {
-    start();
+
   }
 }

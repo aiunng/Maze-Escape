@@ -1,10 +1,12 @@
 package prj.manager;
 
+import static prj.manager.PlaySoundManager.playClip;
 import static prj.util.Constant.DEFAULT_DIRECTION;
 
 import java.awt.event.KeyEvent;
 import prj.enumerate.DirectionEnum;
 import prj.enumerate.GameStatusEnum;
+import prj.enumerate.SoundTypeEnum;
 
 /**
  * 设置当前方向
@@ -25,18 +27,23 @@ public class KeyboardManager {
     switch (e.getKeyCode()) {
       // 方向键
       case KeyEvent.VK_LEFT:
+        playClip(SoundTypeEnum.LEFT);
         direction = DirectionEnum.LEFT;
         break;
       case KeyEvent.VK_UP:
+        playClip(SoundTypeEnum.UP);
         direction = DirectionEnum.UP;
         break;
       case KeyEvent.VK_RIGHT:
+        playClip(SoundTypeEnum.RIGHT);
         direction = DirectionEnum.RIGHT;
         break;
       case KeyEvent.VK_DOWN:
+        playClip(SoundTypeEnum.DOWN);
         direction = DirectionEnum.DOWN;
         break;
       case KeyEvent.VK_SPACE:
+        playClip(SoundTypeEnum.BUTTON);
         // 空格键 暂停<->开始
         if (SysOptions.getStatus() == GameStatusEnum.START.getCode()) {
           SysOptions.setStatus(GameStatusEnum.PAUSE.getCode());
