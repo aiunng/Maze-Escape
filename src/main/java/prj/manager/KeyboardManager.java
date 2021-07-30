@@ -56,6 +56,7 @@ public class KeyboardManager {
         break;
       case KeyEvent.VK_CONTROL:
         // 向当前方向突击
+        playClip(SoundTypeEnum.ASSAULT);
         setMoveDistance(10);
       default:
         break;

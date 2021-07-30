@@ -16,26 +16,44 @@ import prj.enumerate.MoveLevelEnum;
  * @date：2021/7/21 8:05 下午
  */
 public class SysOptions {
-  // 状态
-  public static volatile int status = GameStatusEnum.STOP.getCode();
-  // 分数 暂时未用到
-  public static int score = 0;
-  // 等级
-  public static volatile MoveLevelEnum level = MoveLevelEnum.L1;
-  // 生命
-  public static volatile AtomicInteger life = new AtomicInteger(3);
-  // 开始时间
-  public static volatile long startTime;
-  // 完成时间
-  public static volatile long finishTime;
-  // 当前迷宫
-  public static volatile Integer currentMaze;
-  // 迷宫总数 用于顺序获取迷宫图
-  private static int mazeSize = getMazeMaps().size();
-  // 当前迷宫下标 用于顺序获取迷宫图
-  private static volatile int currentMazeIndex = 0;
   /**
-   * 每次移动距离 1 正常速度 10 突击
+   * 状态
+   */
+  public static volatile int status = GameStatusEnum.STOP.getCode();
+  /**
+   * 分数 暂时未用到
+   */
+  public static int score = 0;
+  /**
+   * 等级 移动速度
+   */
+  public static volatile MoveLevelEnum level = MoveLevelEnum.L1;
+  /**
+   * 生命值 暂时未用到
+   */
+  public static volatile AtomicInteger life = new AtomicInteger(3);
+  /**
+   * 开始时间
+   */
+  public static volatile long startTime;
+  /**
+   * 完成时间
+   */
+  public static volatile long finishTime;
+  /**
+   * 当前迷宫
+   */
+  public static volatile Integer currentMaze;
+  /**
+   * 迷宫总数 用于顺序获取迷宫图
+   */
+  private static int mazeSize = getMazeMaps().size();
+  /**
+   * 当前迷宫下标 用于顺序获取迷宫图
+   */
+  private static int currentMazeIndex = 0;
+  /**
+   * 每次移动距离， 默认1-正常速度、10-突击
    */
   public static volatile int moveDistance = 1;
 
@@ -49,7 +67,6 @@ public class SysOptions {
           } catch (InterruptedException interruptedException) {
           }
           moveDistance = 1;
-          System.out.println(moveDistance);
         }
       }
     });

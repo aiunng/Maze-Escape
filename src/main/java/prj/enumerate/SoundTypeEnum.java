@@ -18,6 +18,7 @@ public enum SoundTypeEnum {
   RIGHT(5, "sound/goblins/right.wav"),
   UP(6, "sound/goblins/up.wav"),
   DOWN(7, "sound/goblins/down.wav"),
+  ASSAULT(8, "sound/goblins/assault.wav"),
   ;
 
   private int code;
