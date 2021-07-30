@@ -6,6 +6,8 @@ import static prj.enumerate.MoveLevelEnum.getMoveLevelEnumByDesc;
 import static prj.manager.KeyboardManager.setDirection;
 import static prj.manager.MoveCtrlManager.moveing;
 import static prj.manager.SoundManager.playClip;
+import static prj.manager.SysOptions.getNextMaze;
+import static prj.manager.SysOptions.setCurrentMaze;
 import static prj.model.EscapeJPanel.setxPoint;
 import static prj.model.EscapeJPanel.setyPoint;
 import static prj.util.Constant.ADVER;
@@ -88,6 +90,8 @@ public class SwingManager {
     contentPane.add(container);
 
     playClip(SoundTypeEnum.BGM);
+    // 获取本局迷宫图
+    setCurrentMaze(getNextMaze());
     // 移动
     moveing();
     // 更新窗口
@@ -104,10 +108,14 @@ public class SwingManager {
 
     JButton startButton = addJButton(START.getEn(), TEXT_NORMAL, 30, 15, 60, 40, buttonJPanel);
     startButton.addActionListener((o) -> {
+      // 音效
       playClip(SoundTypeEnum.BUTTON);
+
       // 如果状态是结束或者通关 则重新开始
       if (GameStatusEnum.OVER.getCode() == SysOptions.getStatus() ||
           GameStatusEnum.SUCCESS.getCode() == SysOptions.getStatus()) {
+        // 重新获取本局迷宫图
+        setCurrentMaze(getNextMaze());
         // 恢复默认参数
         setxPoint(DEFAULT_XPOINT);
         setyPoint(DEFAULT_YPOINT);

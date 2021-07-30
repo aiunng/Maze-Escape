@@ -31,7 +31,7 @@ public class EscapeJPanel extends JPanel {
   public static int yPoint = DEFAULT_YPOINT;
   private int xOffset = 30;
 
-  private static Random rand = new Random();
+  public static Random rand = new Random();
 
   public static int getxPoint() {
     return xPoint;

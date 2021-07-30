@@ -43,6 +43,10 @@ public class SoundManager {
 
       //开始播放
       clip.start();
+      if (SoundTypeEnum.BGM.equals(soundType)) {
+        // 循环播放bgm
+        clip.loop(Integer.MAX_VALUE);
+      }
 
     } catch (Exception e) {
       System.out.println("SoundManager.playClip error. ｜" + e.getMessage() + "｜" + File.separator + soundType.getValue());

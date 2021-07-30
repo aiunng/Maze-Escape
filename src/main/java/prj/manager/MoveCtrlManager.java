@@ -5,7 +5,7 @@ import static prj.enumerate.DirectionEnum.LEFT;
 import static prj.enumerate.DirectionEnum.RIGHT;
 import static prj.enumerate.DirectionEnum.UP;
 import static prj.manager.KeyboardManager.getDirection;
-import static prj.manager.MazeManager.getMazePoints;
+import static prj.manager.MazeManager.getMazeMaps;
 import static prj.manager.SoundManager.playClip;
 import static prj.model.EscapeJPanel.getxPoint;
 import static prj.model.EscapeJPanel.getyPoint;
@@ -82,7 +82,7 @@ public class MoveCtrlManager {
           // 碰撞检测
           pointMode.setxPoint(getxPoint());
           pointMode.setyPoint(getyPoint());
-          if (checkCollision4Lines(getMazePoints(), pointMode)) {
+          if (checkCollision4Lines(getMazeMaps().get(SysOptions.getCurrentMaze()), pointMode)) {
             playClip(SoundTypeEnum.FAIL);
             SysOptions.setStatus(GameStatusEnum.OVER.getCode());
           }

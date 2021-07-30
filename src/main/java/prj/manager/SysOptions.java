@@ -1,5 +1,8 @@
 package prj.manager;
 
+import static prj.manager.MazeManager.getMazeMaps;
+import static prj.model.EscapeJPanel.rand;
+
 import java.util.concurrent.atomic.AtomicInteger;
 import prj.enumerate.GameStatusEnum;
 import prj.enumerate.MoveLevelEnum;
@@ -23,6 +26,12 @@ public class SysOptions {
   public static volatile long startTime;
   // 完成时间
   public static volatile long finishTime;
+  // 当前迷宫
+  public static volatile Integer currentMaze;
+  // 迷宫总数 用于顺序获取迷宫图
+  private static int mazeSize = getMazeMaps().size();
+  // 当前迷宫下标 用于顺序获取迷宫图
+  private static volatile int currentMazeIndex = 0;
 
   public static int getStatus() {
     return status;
@@ -74,5 +83,34 @@ public class SysOptions {
 
   public static void setStartTime(long startTime) {
     SysOptions.startTime = startTime;
+  }
+
+  public static Integer getCurrentMaze() {
+    return currentMaze;
+  }
+
+  public static void setCurrentMaze(Integer currentMaze) {
+    SysOptions.currentMaze = currentMaze;
+  }
+
+  /**
+   * 获取随机地图 ((max-min)+min)+min
+   *
+   * @return
+   */
+  public static Integer getRandMaze() {
+    return rand.nextInt((2 - 1) + 1) + 1;
+  }
+
+  /**
+   * 顺序获取迷宫图
+   * @return
+   */
+  public static Integer getNextMaze() {
+    if (currentMazeIndex == mazeSize) {
+      currentMazeIndex = 0;
+    }
+    currentMazeIndex = currentMazeIndex + 1;
+    return currentMazeIndex;
   }
 }
