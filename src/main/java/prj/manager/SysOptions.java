@@ -2,7 +2,9 @@ package prj.manager;
 
 import static prj.manager.MazeManager.getMazeMaps;
 import static prj.model.EscapeJPanel.rand;
+import static prj.util.ExecutorUtil.getExecutorPool;
 
+import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import prj.enumerate.GameStatusEnum;
 import prj.enumerate.MoveLevelEnum;
@@ -32,6 +34,26 @@ public class SysOptions {
   private static int mazeSize = getMazeMaps().size();
   // 当前迷宫下标 用于顺序获取迷宫图
   private static volatile int currentMazeIndex = 0;
+  /**
+   * 每次移动距离 1 正常速度 10 突击
+   */
+  public static volatile int moveDistance = 1;
+
+  static {
+    getExecutorPool().execute(() -> {
+      while (true) {
+        // 每次突击60毫秒
+        if (10 == moveDistance) {
+          try {
+            TimeUnit.MILLISECONDS.sleep(60L);
+          } catch (InterruptedException interruptedException) {
+          }
+          moveDistance = 1;
+          System.out.println(moveDistance);
+        }
+      }
+    });
+  }
 
   public static int getStatus() {
     return status;
@@ -93,6 +115,10 @@ public class SysOptions {
     SysOptions.currentMaze = currentMaze;
   }
 
+  public static void setMoveDistance(int moveDistance) {
+    SysOptions.moveDistance = moveDistance;
+  }
+
   /**
    * 获取随机地图 ((max-min)+min)+min
    *
@@ -104,6 +130,7 @@ public class SysOptions {
 
   /**
    * 顺序获取迷宫图
+   *
    * @return
    */
   public static Integer getNextMaze() {

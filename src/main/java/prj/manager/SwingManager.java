@@ -144,7 +144,7 @@ public class SwingManager {
       frame.requestFocus();
     });
 
-    JComboBox levelComboBox = addLevelComboBox(TEXT_NORMAL, 170, 15, 90, 40, buttonJPanel);
+    JComboBox<String> levelComboBox = addLevelComboBox(TEXT_NORMAL, 170, 15, 90, 40, buttonJPanel);
 
     levelComboBox.addActionListener((o) -> {
 

@@ -7,6 +7,7 @@ import static prj.enumerate.DirectionEnum.UP;
 import static prj.manager.KeyboardManager.getDirection;
 import static prj.manager.MazeManager.getMazeMaps;
 import static prj.manager.SoundManager.playClip;
+import static prj.manager.SysOptions.moveDistance;
 import static prj.model.EscapeJPanel.getxPoint;
 import static prj.model.EscapeJPanel.getyPoint;
 import static prj.model.EscapeJPanel.setxPoint;
@@ -128,22 +129,22 @@ public class MoveCtrlManager {
 
   public static int left(int xPoint) {
 
-    return xPoint - 1;
+    return xPoint - moveDistance;
   }
 
   public static int right(int xPoint) {
 
-    return xPoint + 1;
+    return xPoint + moveDistance;
   }
 
   public static int up(int yPoint) {
 
-    return yPoint - 1;
+    return yPoint - moveDistance;
   }
 
   public static int down(int yPoint) {
 
-    return yPoint + 1;
+    return yPoint + moveDistance;
   }
 
 }

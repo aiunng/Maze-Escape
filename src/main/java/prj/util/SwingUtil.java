@@ -20,9 +20,9 @@ public class SwingUtil {
     return button;
   }
 
-  public static JComboBox addLevelComboBox(Font font, int x, int y, int width, int height, JPanel contentPanel) {
+  public static JComboBox<String> addLevelComboBox(Font font, int x, int y, int width, int height, JPanel contentPanel) {
     // 创建下拉框
-    JComboBox comboBox = new JComboBox();
+    JComboBox<String> comboBox = new JComboBox<>();
 
     // 绑定下拉框选项
     for (MoveLevelEnum value : MoveLevelEnum.values()) {

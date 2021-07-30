@@ -1,6 +1,7 @@
 package prj.manager;
 
 import static prj.manager.SoundManager.playClip;
+import static prj.manager.SysOptions.setMoveDistance;
 import static prj.util.Constant.DEFAULT_DIRECTION;
 
 import java.awt.event.KeyEvent;
@@ -53,6 +54,9 @@ public class KeyboardManager {
           SysOptions.setStatus(GameStatusEnum.START.getCode());
         }
         break;
+      case KeyEvent.VK_CONTROL:
+        // 向当前方向突击
+        setMoveDistance(10);
       default:
         break;
     }
