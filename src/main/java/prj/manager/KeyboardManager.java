@@ -1,6 +1,6 @@
 package prj.manager;
 
-import static prj.manager.PlaySoundManager.playClip;
+import static prj.manager.SoundManager.playClip;
 import static prj.util.Constant.DEFAULT_DIRECTION;
 
 import java.awt.event.KeyEvent;

@@ -6,7 +6,7 @@ import static prj.enumerate.DirectionEnum.RIGHT;
 import static prj.enumerate.DirectionEnum.UP;
 import static prj.manager.KeyboardManager.getDirection;
 import static prj.manager.MazeManager.getMazePoints;
-import static prj.manager.PlaySoundManager.playClip;
+import static prj.manager.SoundManager.playClip;
 import static prj.model.EscapeJPanel.getxPoint;
 import static prj.model.EscapeJPanel.getyPoint;
 import static prj.model.EscapeJPanel.setxPoint;

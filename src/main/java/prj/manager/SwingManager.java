@@ -5,7 +5,7 @@ import static prj.enumerate.GameStatusEnum.START;
 import static prj.enumerate.MoveLevelEnum.getMoveLevelEnumByDesc;
 import static prj.manager.KeyboardManager.setDirection;
 import static prj.manager.MoveCtrlManager.moveing;
-import static prj.manager.PlaySoundManager.playClip;
+import static prj.manager.SoundManager.playClip;
 import static prj.model.EscapeJPanel.setxPoint;
 import static prj.model.EscapeJPanel.setyPoint;
 import static prj.util.Constant.ADVER;
