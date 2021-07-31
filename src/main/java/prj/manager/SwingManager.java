@@ -6,7 +6,9 @@ import static prj.enumerate.MoveLevelEnum.getMoveLevelEnumByDesc;
 import static prj.manager.KeyboardManager.setDirection;
 import static prj.manager.MoveCtrlManager.moveing;
 import static prj.manager.SoundManager.playClip;
+import static prj.manager.SysOptions.getCurrentMaze;
 import static prj.manager.SysOptions.getNextMaze;
+import static prj.manager.SysOptions.initPoints;
 import static prj.manager.SysOptions.setCurrentMaze;
 import static prj.model.EscapeJPanel.setxPoint;
 import static prj.model.EscapeJPanel.setyPoint;
@@ -15,8 +17,6 @@ import static prj.util.Constant.AUTHOR;
 import static prj.util.Constant.BLOG_LINK;
 import static prj.util.Constant.BLOG_TEXT;
 import static prj.util.Constant.DEFAULT_DIRECTION;
-import static prj.util.Constant.DEFAULT_XPOINT;
-import static prj.util.Constant.DEFAULT_YPOINT;
 import static prj.util.Constant.GAME_NAME;
 import static prj.util.Constant.ICON_URL;
 import static prj.util.Constant.TEXT_BOLD;
@@ -92,6 +92,9 @@ public class SwingManager {
     playClip(SoundTypeEnum.BGM);
     // 获取本局迷宫图
     setCurrentMaze(getNextMaze());
+    // 重置起始点坐标
+    setxPoint(initPoints.get(getCurrentMaze())[0]);
+    setyPoint(initPoints.get(getCurrentMaze())[1]);
     // 移动
     moveing();
     // 更新窗口
@@ -117,8 +120,8 @@ public class SwingManager {
         // 重新获取本局迷宫图
         setCurrentMaze(getNextMaze());
         // 恢复默认参数
-        setxPoint(DEFAULT_XPOINT);
-        setyPoint(DEFAULT_YPOINT);
+        setxPoint(initPoints.get(getCurrentMaze())[0]);
+        setyPoint(initPoints.get(getCurrentMaze())[1]);
         setDirection(DEFAULT_DIRECTION);
         // 重新开始
         moveing();

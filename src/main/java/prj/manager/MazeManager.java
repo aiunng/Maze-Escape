@@ -14,6 +14,7 @@ import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.CopyOnWriteArrayList;
 
 /**
+ * 迷宫图点位
  * @author：wangXinYu
  * @date：2021/7/24 2:23 下午
  */
@@ -400,7 +401,150 @@ public class MazeManager {
    * @param g
    */
   public static void paintMaze2(Graphics g) {
-    g.drawLine(100, 100, 300, 100);
+    // 开始图标
+    g.drawString(START_ICON, 10, 82);
+    // 结束图标
+    g.drawString(START_ICON, 360, 145);
+    // 1
+    g.drawLine(0, offSet * 2, offSet * 2, offSet * 2);
+    // 2
+    g.drawLine(offSet, offSet, offSet * 3, offSet);
+    // 3
+    g.drawLine(offSet * 3, offSet, offSet * 3, offSet * 3);
+    // 4
+    g.drawLine(offSet * 4, 0, offSet * 4, offSet * 2);
+    // 5
+    g.drawLine(0, offSet * 3, offSet * 5, offSet * 3);
+    // 6
+    g.drawLine(offSet * 5, offSet, offSet * 5, offSet * 3);
+    // 7
+    g.drawLine(offSet * 6, 0, offSet * 6, offSet);
+    // 8
+    g.drawLine(offSet * 6, offSet * 2, offSet * 6, offSet * 6);
+    // 9
+    g.drawLine(offSet * 6, offSet * 2, offSet * 9, offSet * 2);
+    // 10
+    g.drawLine(offSet * 7, offSet, offSet * 9, offSet);
+    // 11
+    g.drawLine(offSet * 9, offSet, offSet * 9, offSet * 2);
+    // 12
+    g.drawLine(offSet * 10, 0, offSet * 10, offSet * 3);
+    // 13
+    g.drawLine(offSet * 11, offSet, offSet * 11, offSet * 4);
+    // 14
+    g.drawLine(offSet * 11, offSet, offSet * 12, offSet);
+    // 15
+    g.drawLine(offSet * 12, offSet, offSet * 12, offSet * 4);
+    // 16
+    g.drawLine(offSet * 12, offSet * 4, offSet * 13, offSet * 4);
+    // 17
+    g.drawLine(offSet, offSet * 4, offSet * 6, offSet * 4);
+    // 18
+    g.drawLine(offSet * 7, offSet * 3, offSet * 7, offSet * 5);
+    // 19
+    g.drawLine(offSet * 7, offSet * 3, offSet * 10, offSet * 3);
+    // 20
+    g.drawLine(offSet * 8, offSet * 4, offSet * 11, offSet * 4);
+    // 21
+    g.drawLine(offSet, offSet * 5, offSet * 2, offSet * 5);
+    // 22
+    g.drawLine(offSet * 3, offSet * 5, offSet * 5, offSet * 5);
+    // 23
+    g.drawLine(offSet * 7, offSet * 5, offSet * 8, offSet * 5);
+    // 24
+    g.drawLine(offSet * 8, offSet * 5, offSet * 8, offSet * 7);
+    // 25
+    g.drawLine(offSet * 9, offSet * 4, offSet * 9, offSet * 8);
+    // 26
+    g.drawLine(offSet * 10, offSet * 5, offSet * 10, offSet * 6);
+    // 27
+    g.drawLine(offSet * 10, offSet * 5, offSet * 13, offSet * 5);
+    // 28
+    g.drawLine(0, offSet * 7, offSet, offSet * 7);
+    // 29
+    g.drawLine(offSet, offSet * 6, offSet, offSet * 7);
+    // 30
+    g.drawLine(offSet * 2, offSet * 5, offSet * 2, offSet * 9);
+    // 31
+    g.drawLine(offSet, offSet * 8, offSet * 5, offSet * 8);
+    // 32
+    g.drawLine(offSet * 3, offSet * 6, offSet * 4, offSet * 6);
+    // 33
+    g.drawLine(offSet * 3, offSet * 6, offSet * 3, offSet * 7);
+    // 34
+    g.drawLine(offSet * 3, offSet * 7, offSet * 6, offSet * 7);
+    // 35
+    g.drawLine(offSet * 5, offSet * 5, offSet * 5, offSet * 7);
+    // 36
+    g.drawLine(offSet * 6, offSet * 7, offSet * 6, offSet * 9);
+    // 37
+    g.drawLine(offSet * 6, offSet * 6, offSet * 7, offSet * 6);
+    // 38
+    g.drawLine(offSet * 7, offSet * 6, offSet * 7, offSet * 10);
+    // 39
+    g.drawLine(offSet * 7, offSet * 8, offSet * 9, offSet * 8);
+    // 40
+    g.drawLine(offSet * 10, offSet * 7, offSet * 10, offSet * 8);
+    // 41
+    g.drawLine(offSet * 10, offSet * 7, offSet * 12, offSet * 7);
+    // 42
+    g.drawLine(offSet * 10, offSet * 6, offSet * 12, offSet * 6);
+    // 43
+    g.drawLine(offSet * 12, offSet * 6, offSet * 12, offSet * 7);
+    // 44
+    g.drawLine(offSet, offSet * 9, offSet, offSet * 10);
+    // 45
+    g.drawLine(0, offSet * 10, offSet * 3, offSet * 10);
+    // 46
+    g.drawLine(offSet * 3, offSet * 9, offSet * 3, offSet * 10);
+    // 47
+    g.drawLine(offSet * 4, offSet * 8, offSet * 4, offSet * 12);
+    // 48
+    g.drawLine(offSet * 5, offSet * 9, offSet * 5, offSet * 10);
+    // 49
+    g.drawLine(offSet * 5, offSet * 9, offSet * 6, offSet * 9);
+    // 50
+    g.drawLine(offSet * 4, offSet * 10, offSet * 8, offSet * 10);
+    // 51
+    g.drawLine(offSet * 7, offSet * 9, offSet * 10, offSet * 9);
+    // 52
+    g.drawLine(offSet * 10, offSet * 9, offSet * 10, offSet * 11);
+    // 53
+    g.drawLine(offSet * 11, offSet * 8, offSet * 13, offSet * 8);
+    // 54
+    g.drawLine(offSet * 11, offSet * 9, offSet * 13, offSet * 9);
+    // 55
+    g.drawLine(offSet * 11, offSet * 9, offSet * 11, offSet * 10);
+    // 56
+    g.drawLine(offSet, offSet * 11, offSet, offSet * 12);
+    // 57
+    g.drawLine(offSet, offSet * 11, offSet * 4, offSet * 11);
+    // 58
+    g.drawLine(offSet * 3, offSet * 11, offSet * 3, offSet * 12);
+    // 59
+    g.drawLine(offSet * 4, offSet * 12, offSet * 6, offSet * 12);
+    // 60
+    g.drawLine(offSet * 5, offSet * 11, offSet * 7, offSet * 11);
+    // 61
+    g.drawLine(offSet * 8, offSet * 10, offSet * 8, offSet * 11);
+    // 62
+    g.drawLine(offSet * 9, offSet * 10, offSet * 9, offSet * 12);
+    // 63
+    g.drawLine(offSet * 10, offSet * 11, offSet * 11, offSet * 11);
+    // 64
+    g.drawLine(offSet * 11, offSet * 10, offSet * 12, offSet * 10);
+    // 65
+    g.drawLine(offSet * 12, offSet * 10, offSet * 12, offSet * 12);
+    // 66
+    g.drawLine(offSet * 2, offSet * 12, offSet * 2, offSet * 13);
+    // 67
+    g.drawLine(offSet * 7, offSet * 11, offSet * 7, offSet * 13);
+    // 68
+    g.drawLine(offSet * 7, offSet * 12, offSet * 9, offSet * 12);
+    // 69
+    g.drawLine(offSet * 10, offSet * 12, offSet * 10, offSet * 13);
+    // 70
+    g.drawLine(offSet * 11, offSet * 12, offSet * 12, offSet * 12);
   }
 
   /**
@@ -408,7 +552,145 @@ public class MazeManager {
    */
   public static void initMaze2Point() {
     // 1
-    maze2Points.add(new int[]{100, 100, 300, 100});
+    maze2Points.add(new int[]{0, offSet * 2, offSet * 2, offSet * 2});
+    // 2
+    maze2Points.add(new int[]{offSet, offSet, offSet * 3, offSet});
+    // 3
+    maze2Points.add(new int[]{offSet * 3, offSet, offSet * 3, offSet * 3});
+    // 4
+    maze2Points.add(new int[]{offSet * 4, 0, offSet * 4, offSet * 2});
+    // 5
+    maze2Points.add(new int[]{0, offSet * 3, offSet * 5, offSet * 3});
+    // 6
+    maze2Points.add(new int[]{offSet * 5, offSet, offSet * 5, offSet * 3});
+    // 7
+    maze2Points.add(new int[]{offSet * 6, 0, offSet * 6, offSet});
+    // 8
+    maze2Points.add(new int[]{offSet * 6, offSet * 2, offSet * 6, offSet * 6});
+    // 9
+    maze2Points.add(new int[]{offSet * 6, offSet * 2, offSet * 9, offSet * 2});
+    // 10
+    maze2Points.add(new int[]{offSet * 7, offSet, offSet * 9, offSet});
+    // 11
+    maze2Points.add(new int[]{offSet * 9, offSet, offSet * 9, offSet * 2});
+    // 12
+    maze2Points.add(new int[]{offSet * 10, 0, offSet * 10, offSet * 3});
+    // 13
+    maze2Points.add(new int[]{offSet * 11, offSet, offSet * 11, offSet * 4});
+    // 14
+    maze2Points.add(new int[]{offSet * 11, offSet, offSet * 12, offSet});
+    // 15
+    maze2Points.add(new int[]{offSet * 12, offSet, offSet * 12, offSet * 4});
+    // 16
+    maze2Points.add(new int[]{offSet * 12, offSet * 4, offSet * 13, offSet * 4});
+    // 17
+    maze2Points.add(new int[]{offSet, offSet * 4, offSet * 6, offSet * 4});
+    // 18
+    maze2Points.add(new int[]{offSet * 7, offSet * 3, offSet * 7, offSet * 5});
+    // 19
+    maze2Points.add(new int[]{offSet * 7, offSet * 3, offSet * 10, offSet * 3});
+    // 20
+    maze2Points.add(new int[]{offSet * 8, offSet * 4, offSet * 11, offSet * 4});
+    // 21
+    maze2Points.add(new int[]{offSet, offSet * 5, offSet * 2, offSet * 5});
+    // 22
+    maze2Points.add(new int[]{offSet * 3, offSet * 5, offSet * 5, offSet * 5});
+    // 23
+    maze2Points.add(new int[]{offSet * 7, offSet * 5, offSet * 8, offSet * 5});
+    // 24
+    maze2Points.add(new int[]{offSet * 8, offSet * 5, offSet * 8, offSet * 7});
+    // 25
+    maze2Points.add(new int[]{offSet * 9, offSet * 4, offSet * 9, offSet * 8});
+    // 26
+    maze2Points.add(new int[]{offSet * 10, offSet * 5, offSet * 10, offSet * 6});
+    // 27
+    maze2Points.add(new int[]{offSet * 10, offSet * 5, offSet * 13, offSet * 5});
+    // 28
+    maze2Points.add(new int[]{0, offSet * 7, offSet, offSet * 7});
+    // 29
+    maze2Points.add(new int[]{offSet, offSet * 6, offSet, offSet * 7});
+    // 30
+    maze2Points.add(new int[]{offSet * 2, offSet * 5, offSet * 2, offSet * 9});
+    // 31
+    maze2Points.add(new int[]{offSet, offSet * 8, offSet * 5, offSet * 8});
+    // 32
+    maze2Points.add(new int[]{offSet * 3, offSet * 6, offSet * 4, offSet * 6});
+    // 33
+    maze2Points.add(new int[]{offSet * 3, offSet * 6, offSet * 3, offSet * 7});
+    // 34
+    maze2Points.add(new int[]{offSet * 3, offSet * 7, offSet * 6, offSet * 7});
+    // 35
+    maze2Points.add(new int[]{offSet * 5, offSet * 5, offSet * 5, offSet * 7});
+    // 36
+    maze2Points.add(new int[]{offSet * 6, offSet * 7, offSet * 6, offSet * 9});
+    // 37
+    maze2Points.add(new int[]{offSet * 6, offSet * 6, offSet * 7, offSet * 6});
+    // 38
+    maze2Points.add(new int[]{offSet * 7, offSet * 6, offSet * 7, offSet * 10});
+    // 39
+    maze2Points.add(new int[]{offSet * 7, offSet * 8, offSet * 9, offSet * 8});
+    // 40
+    maze2Points.add(new int[]{offSet * 10, offSet * 7, offSet * 10, offSet * 8});
+    // 41
+    maze2Points.add(new int[]{offSet * 10, offSet * 7, offSet * 12, offSet * 7});
+    // 42
+    maze2Points.add(new int[]{offSet * 10, offSet * 6, offSet * 12, offSet * 6});
+    // 43
+    maze2Points.add(new int[]{offSet * 12, offSet * 6, offSet * 12, offSet * 7});
+    // 44
+    maze2Points.add(new int[]{offSet, offSet * 9, offSet, offSet * 10});
+    // 45
+    maze2Points.add(new int[]{0, offSet * 10, offSet * 3, offSet * 10});
+    // 46
+    maze2Points.add(new int[]{offSet * 3, offSet * 9, offSet * 3, offSet * 10});
+    // 47
+    maze2Points.add(new int[]{offSet * 4, offSet * 8, offSet * 4, offSet * 12});
+    // 48
+    maze2Points.add(new int[]{offSet * 5, offSet * 9, offSet * 5, offSet * 10});
+    // 49
+    maze2Points.add(new int[]{offSet * 5, offSet * 9, offSet * 6, offSet * 9});
+    // 50
+    maze2Points.add(new int[]{offSet * 4, offSet * 10, offSet * 8, offSet * 10});
+    // 51
+    maze2Points.add(new int[]{offSet * 7, offSet * 9, offSet * 10, offSet * 9});
+    // 52
+    maze2Points.add(new int[]{offSet * 10, offSet * 9, offSet * 10, offSet * 11});
+    // 53
+    maze2Points.add(new int[]{offSet * 11, offSet * 8, offSet * 13, offSet * 8});
+    // 54
+    maze2Points.add(new int[]{offSet * 11, offSet * 9, offSet * 13, offSet * 9});
+    // 55
+    maze2Points.add(new int[]{offSet * 11, offSet * 9, offSet * 11, offSet * 10});
+    // 56
+    maze2Points.add(new int[]{offSet, offSet * 11, offSet, offSet * 12});
+    // 57
+    maze2Points.add(new int[]{offSet, offSet * 11, offSet * 4, offSet * 11});
+    // 58
+    maze2Points.add(new int[]{offSet * 3, offSet * 11, offSet * 3, offSet * 12});
+    // 59
+    maze2Points.add(new int[]{offSet * 4, offSet * 12, offSet * 6, offSet * 12});
+    // 60
+    maze2Points.add(new int[]{offSet * 5, offSet * 11, offSet * 7, offSet * 11});
+    // 61
+    maze2Points.add(new int[]{offSet * 8, offSet * 10, offSet * 8, offSet * 11});
+    // 62
+    maze2Points.add(new int[]{offSet * 9, offSet * 10, offSet * 9, offSet * 12});
+    // 63
+    maze2Points.add(new int[]{offSet * 10, offSet * 11, offSet * 11, offSet * 11});
+    // 64
+    maze2Points.add(new int[]{offSet * 11, offSet * 10, offSet * 12, offSet * 10});
+    // 65
+    maze2Points.add(new int[]{offSet * 12, offSet * 10, offSet * 12, offSet * 12});
+    // 66
+    maze2Points.add(new int[]{offSet * 2, offSet * 12, offSet * 2, offSet * 13});
+    // 67
+    maze2Points.add(new int[]{offSet * 7, offSet * 11, offSet * 7, offSet * 13});
+    // 68
+    maze2Points.add(new int[]{offSet * 7, offSet * 12, offSet * 9, offSet * 12});
+    // 69
+    maze2Points.add(new int[]{offSet * 10, offSet * 12, offSet * 10, offSet * 13});
+    // 70
+    maze2Points.add(new int[]{offSet * 11, offSet * 12, offSet * 12, offSet * 12});
   }
 
   public static Map<Integer, List<int[]>> getMazeMaps() {

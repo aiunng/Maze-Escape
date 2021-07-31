@@ -3,8 +3,6 @@ package prj.model;
 import static prj.manager.MazeManager.paintMaze;
 import static prj.util.Constant.BIG_BOLD;
 import static prj.util.Constant.CROWN_ICON;
-import static prj.util.Constant.DEFAULT_XPOINT;
-import static prj.util.Constant.DEFAULT_YPOINT;
 import static prj.util.Constant.LEVE_1;
 import static prj.util.Constant.PLAYER_ICON;
 import static prj.util.Constant.TEXT_SMALL;
@@ -18,6 +16,7 @@ import java.util.Random;
 import javax.swing.JPanel;
 import prj.enumerate.DirectionEnum;
 import prj.enumerate.GameStatusEnum;
+import prj.enumerate.MazeTypeEnum;
 import prj.manager.SysOptions;
 
 /**
@@ -26,9 +25,9 @@ import prj.manager.SysOptions;
  */
 public class EscapeJPanel extends JPanel {
 
-  // 初始坐标
-  public static int xPoint = DEFAULT_XPOINT;
-  public static int yPoint = DEFAULT_YPOINT;
+  // 默认初始坐标
+  public static int xPoint = MazeTypeEnum.MAZE_1.getStartPoint()[0];
+  public static int yPoint = MazeTypeEnum.MAZE_1.getStartPoint()[1];
   private int xOffset = 30;
 
   public static Random rand = new Random();

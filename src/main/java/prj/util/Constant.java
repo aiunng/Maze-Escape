@@ -10,8 +10,6 @@ import prj.enumerate.DirectionEnum;
 public class Constant {
 
   public static final String GAME_NAME = "Maze-Escape";
-  public static final int DEFAULT_XPOINT = 10;
-  public static final int DEFAULT_YPOINT = 24;
   public static final DirectionEnum DEFAULT_DIRECTION = DirectionEnum.RIGHT;
   public static final String PLAYER_ICON = "☻";
   public static final String START_ICON = "➡︎";

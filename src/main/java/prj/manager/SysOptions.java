@@ -4,9 +4,12 @@ import static prj.manager.MazeManager.getMazeMaps;
 import static prj.model.EscapeJPanel.rand;
 import static prj.util.ExecutorUtil.getExecutorPool;
 
+import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.atomic.AtomicInteger;
 import prj.enumerate.GameStatusEnum;
+import prj.enumerate.MazeTypeEnum;
 import prj.enumerate.MoveLevelEnum;
 
 /**
@@ -56,8 +59,24 @@ public class SysOptions {
    * 每次移动距离， 默认1-正常速度、10-突击
    */
   public static volatile int moveDistance = 1;
+  /**
+   * 每张地图的起始点坐标
+   */
+  public static volatile Map<Integer, int[]> initPoints = new ConcurrentHashMap<>();
+  /**
+   * 每张地图的结束点坐标
+   */
+  public static volatile Map<Integer, int[]> endPoints = new ConcurrentHashMap<>();
 
   static {
+
+    initPoints.put(1, MazeTypeEnum.MAZE_1.getStartPoint());
+    initPoints.put(2, MazeTypeEnum.MAZE_2.getStartPoint());
+
+    endPoints.put(1, MazeTypeEnum.MAZE_1.getEndPoint());
+    endPoints.put(2, MazeTypeEnum.MAZE_2.getEndPoint());
+
+    // 突击的时间
     getExecutorPool().execute(() -> {
       while (true) {
         // 每次突击60毫秒
