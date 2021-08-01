@@ -22,3 +22,6 @@
 ###游戏截图:
 
 <img src="https://cdn.nlark.com/yuque/0/2021/png/379666/1627384482533-f65d3af2-13a9-4a7e-8710-6bb75a52d528.png" width="30%">
+
+###游戏录屏：
+<video src="https://github.com/aiunng/Maze-Escape/blob/def8ab6ae182e1a727b08c37f6af52486dd3bee6/%E5%B1%8F%E5%B9%95%E5%BD%95%E5%88%B62021-08-01%20%E4%B8%8A%E5%8D%8810.45.49.mov" controls="controls" width="30%">您的浏览器不支持播放该视频！</video>
